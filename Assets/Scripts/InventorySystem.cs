@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -13,7 +14,7 @@ public class InventorySystem : SingletonMonobehaviour<InventorySystem>
     [SerializeField] bool isFull;
 
     [SerializeField] List<GameObject> slotList = new List<GameObject>();
-    [SerializeField] List<string> itemList = new List<string>();
+    public List<string> itemList = new List<string>();
     private GameObject itemToAdd;
     private GameObject whatSlotToEquip;
 
@@ -43,8 +44,8 @@ public class InventorySystem : SingletonMonobehaviour<InventorySystem>
         itemToAdd = (GameObject)Instantiate(Resources.Load<GameObject>(itemName), whatSlotToEquip.transform.position, whatSlotToEquip.transform.rotation);
         itemToAdd.transform.SetParent(whatSlotToEquip.transform);
 
-
-        itemList.Add(itemName);
+        string result = itemName.Replace("_Inv","");
+        itemList.Add(result);
     }
 
     public bool CheckIfFull()
@@ -72,5 +73,44 @@ public class InventorySystem : SingletonMonobehaviour<InventorySystem>
             }
         }
         return new GameObject();
+    }
+
+    public void RemoveItem(string nameToRemove, int amaountToRemove)
+    {
+        if (nameToRemove == null) { return; }
+        int counter = amaountToRemove;
+        for (int i = slotList.Count - 1; i >= 0; i--)
+        {
+            if (counter == 0) break;
+
+
+            if (slotList[i].transform.childCount > 0)
+            {
+
+                if (slotList[i].transform.GetChild(0).name == nameToRemove + "_Inv(Clone)" && counter != 0)
+                {
+
+                    Destroy(slotList[i].transform.GetChild(0).gameObject);
+                    counter--;
+                }
+
+            }
+        }
+    }
+
+    public void ReCalculatelist()
+    {
+        itemList.Clear();
+        foreach (GameObject slot in slotList)
+        {
+            if (slot.transform.childCount > 0)
+            {
+                string name = slot.transform.GetChild(0).name;
+                string stringRemove = "_Inv(Clone)";
+                string result = name.Replace(stringRemove, "");
+                itemList.Add(result);
+            }
+
+        }
     }
 }
