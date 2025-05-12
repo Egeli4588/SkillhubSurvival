@@ -1,6 +1,9 @@
 using System;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
+using UnityEngine.UI;
+using System.Collections;
 
 public class InventorySystem : SingletonMonobehaviour<InventorySystem>
 {
@@ -18,8 +21,10 @@ public class InventorySystem : SingletonMonobehaviour<InventorySystem>
     private GameObject itemToAdd;
     private GameObject whatSlotToEquip;
 
-
-
+    [Header("ýtem Pop-up Settings")]
+    public GameObject pickedUpPopUp;
+    public TMP_Text pickedupitemText;
+    public Image pickedupitemSprite;
 
     private void Start()
     {
@@ -43,9 +48,12 @@ public class InventorySystem : SingletonMonobehaviour<InventorySystem>
         whatSlotToEquip = FindNextEmptySlot();
         itemToAdd = (GameObject)Instantiate(Resources.Load<GameObject>(itemName), whatSlotToEquip.transform.position, whatSlotToEquip.transform.rotation);
         itemToAdd.transform.SetParent(whatSlotToEquip.transform);
-
-        string result = itemName.Replace("_Inv","");
+        string result = itemName.Replace("_Inv", "");
         itemList.Add(result);
+
+        TriggerPickUpPopUp(result, itemToAdd.GetComponent<Image>().color);
+
+        CraftingSystem.Instance.RefreshNeededItems();
     }
 
     public bool CheckIfFull()
@@ -112,5 +120,22 @@ public class InventorySystem : SingletonMonobehaviour<InventorySystem>
             }
 
         }
+    }
+
+    void TriggerPickUpPopUp(string itemName, Color itemColor)
+    {
+        CancelInvoke("ClosePickUpPopUp");
+        pickedUpPopUp.SetActive(true);
+        pickedupitemText.text = itemName;
+        pickedupitemSprite.color = itemColor;
+
+        Invoke("ClosePickUpPopUp", 1f);
+    }
+
+    void ClosePickUpPopUp()
+    {
+
+
+        pickedUpPopUp.SetActive(false);
     }
 }

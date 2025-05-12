@@ -21,7 +21,7 @@ public class ItemSlot : MonoBehaviour,IDropHandler
         if (!Item)
         {
             DragDrop.itemBeingDragged.transform.SetParent(transform);
-            DragDrop.itemBeingDragged.transform.localPosition = new Vector2(25, -25);
+            DragDrop.itemBeingDragged.transform.localPosition = new Vector2(0, 0);
         }
     }
 }
