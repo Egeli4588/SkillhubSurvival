@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 1466016827030646539}
   - component: {fileID: 4942726165490172350}
   - component: {fileID: 5188249947797044358}
+  - component: {fileID: 4542187781265760524}
   m_Layer: 5
   m_Name: Axe
   m_TagString: Untagged
@@ -101,3 +102,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9b1ac1998cbbacb4f9b947ee5a54fb75, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &4542187781265760524
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4873279245155086964}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 98581a21af71b1a43b6543a51c8d81f5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isTrashable: 1
+  itemName: 
+  itemDescription: 
+  itemFunctionality: 
+  isConsumable: 0
+  healthEffect: 0
+  calorieEffect: 0
+  hydrationEffect: 0

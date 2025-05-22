@@ -10,8 +10,10 @@ public class InventorySystem : SingletonMonobehaviour<InventorySystem>
     protected override void Awake()
     {
         base.Awake();
+
     }
 
+    [SerializeField] public GameObject itemInfoUI;
     [SerializeField] GameObject InventoryScreenUI;
     public bool isOpen;
     [SerializeField] bool isFull;
@@ -37,7 +39,7 @@ public class InventorySystem : SingletonMonobehaviour<InventorySystem>
             isOpen = !isOpen;
             InventoryScreenUI.SetActive(isOpen);
 
-
+            itemInfoUI.SetActive(false);
 
         }
     }
@@ -98,7 +100,7 @@ public class InventorySystem : SingletonMonobehaviour<InventorySystem>
                 if (slotList[i].transform.GetChild(0).name == nameToRemove + "_Inv(Clone)" && counter != 0)
                 {
 
-                    Destroy(slotList[i].transform.GetChild(0).gameObject);
+                    DestroyImmediate(slotList[i].transform.GetChild(0).gameObject);
                     counter--;
                 }
 

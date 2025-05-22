@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 6320926054794371879}
   - component: {fileID: 6144973125268715127}
   - component: {fileID: 7628235133302929399}
+  - component: {fileID: 2525586546767915804}
   m_Layer: 5
   m_Name: Stick_Inv
   m_TagString: Untagged
@@ -101,3 +102,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9b1ac1998cbbacb4f9b947ee5a54fb75, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &2525586546767915804
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6393286274746263936}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 98581a21af71b1a43b6543a51c8d81f5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isTrashable: 1
+  itemName: Stick
+  itemDescription: "sen a\u011Fa\xE7tan bir par\xE7as\u0131n"
+  itemFunctionality: "sen ate\u015F yakmaya  ve a\u011Fa\xE7tan craft yapmaya yarars\u0131n"
+  isConsumable: 1
+  healthEffect: 20
+  calorieEffect: 0
+  hydrationEffect: 0

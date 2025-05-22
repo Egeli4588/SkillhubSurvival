@@ -9,6 +9,14 @@ public class SelectionManager : MonoBehaviour
     [SerializeField] GameObject handImage;
     [SerializeField] GameObject axeImage;
     [SerializeField] GameObject whiteCirticle;
+
+    private void Awake()
+    {
+        if (interactionText != null) {
+        
+            interactableText.SetActive(false);  
+        }
+    }
     private void Start()
     {
         interactionText = interactableText.GetComponent<TMP_Text>();
