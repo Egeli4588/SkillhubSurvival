@@ -23,7 +23,15 @@ public class InventoryItem : MonoBehaviour, IPointerEnterHandler, IPointerExitHa
     public float calorieEffect;
     public float hydrationEffect;
 
+    //Equipping
+    public bool isEquippable;
+    private GameObject itemPendingEquipping;
+    public bool isInsideQuick;
 
+    //is Selected
+
+
+    public bool isSelected;
     private void Start()
     {
         itemInfoUI = InventorySystem.Instance.itemInfoUI;
@@ -31,7 +39,13 @@ public class InventoryItem : MonoBehaviour, IPointerEnterHandler, IPointerExitHa
         itemDescriptionText = itemInfoUI.transform.Find("ItemDescription").GetComponent<TMP_Text>();
         itemFunctionalityText = itemInfoUI.transform.Find("ItemFunctionality").GetComponent<TMP_Text>();
     }
-
+    private void Update()
+    {
+        if (isSelected)
+        {
+            gameObject.GetComponent<DragDrop>().enabled = false;
+        }
+    }
 
     public void OnPointerEnter(PointerEventData eventData)
     {
@@ -54,6 +68,12 @@ public class InventoryItem : MonoBehaviour, IPointerEnterHandler, IPointerExitHa
             {
                 itemPendingConsumption = gameObject;
                 ConsumeTheItem(healthEffect, calorieEffect, hydrationEffect);
+            }
+
+            if (isEquippable && !isInsideQuick && !EquipmentSystem.Instance.ChechkIfFull())
+            {
+                EquipmentSystem.Instance.AddToQuickSlot(gameObject);
+                isInsideQuick = true;
             }
         }
     }

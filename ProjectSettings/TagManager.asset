@@ -8,6 +8,7 @@ TagManager:
   - stick
   - wood
   - Choppable
+  - QuickSlot
   layers:
   - Default
   - TransparentFX
