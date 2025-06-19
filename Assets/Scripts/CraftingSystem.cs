@@ -22,7 +22,7 @@ public class CraftingSystem : SingletonMonobehaviour<CraftingSystem>
     [SerializeField] TMP_Text AxeReq1, AxeReq2;
 
     // bluePrint
-    Blueprint AxeBlp = new Blueprint("Axe", "Stone", "Stick", 3, 3, 2);
+    Blueprint AxeBlp = new Blueprint("Axe_Inv", "Stone", "Stick", 3, 3, 2);
 
 
     public bool isOpen;

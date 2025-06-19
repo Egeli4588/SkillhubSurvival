@@ -1,7 +1,7 @@
 using TMPro;
 using UnityEngine;
 
-public class SelectionManager : MonoBehaviour
+public class SelectionManager : SingletonMonobehaviour<SelectionManager>
 {
     [SerializeField] GameObject interactableText;
     TMP_Text interactionText;
@@ -10,8 +10,13 @@ public class SelectionManager : MonoBehaviour
     [SerializeField] GameObject axeImage;
     [SerializeField] GameObject whiteCirticle;
 
-    private void Awake()
+    public bool isPlayerNear;
+
+    public ChoppablrTree ChoppablrTree;
+    protected override void Awake()
     {
+        base.Awake();
+
         if (interactionText != null) {
         
             interactableText.SetActive(false);  
@@ -48,6 +53,13 @@ public class SelectionManager : MonoBehaviour
                 {
                     axeImage.SetActive(true);
                     whiteCirticle.SetActive(false);
+                    isPlayerNear = true;
+                    ChoppablrTree =hit.transform.GetComponent<ChoppablrTree>(); 
+              
+                }
+                else
+                {
+                    ChoppablrTree = null;
                 }
             }
             else
@@ -56,6 +68,7 @@ public class SelectionManager : MonoBehaviour
                 handImage.SetActive(false);
                 axeImage.SetActive(false);
                 whiteCirticle.SetActive(true);
+                ChoppablrTree = null;
             }
 
             //iventorye ýtem ekle

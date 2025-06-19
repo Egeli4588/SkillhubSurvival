@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 5188249947797044358}
   - component: {fileID: 4542187781265760524}
   m_Layer: 5
-  m_Name: Axe
+  m_Name: Axe_Inv
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -115,12 +115,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isTrashable: 1
-  itemName: 
-  itemDescription: 
+  itemName: Axe
+  itemDescription: Balta
   itemFunctionality: 
   isConsumable: 0
   healthEffect: 0
   calorieEffect: 0
   hydrationEffect: 0
   isEquippable: 1
-  isEquipped: 0
+  isInsideQuick: 0
+  isSelected: 0

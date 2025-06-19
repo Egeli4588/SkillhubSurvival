@@ -15,6 +15,8 @@ public class EquipmentSystem : SingletonMonobehaviour<EquipmentSystem>
 
     public int selectedNumber = -1;
     public GameObject selectedItem;
+
+    public Transform toolHolder;
     private void Update()
     {
         if (Input.GetKeyDown(KeyCode.Alpha1))
@@ -66,6 +68,9 @@ public class EquipmentSystem : SingletonMonobehaviour<EquipmentSystem>
 
                 selectedItem.GetComponent<InventoryItem>().isSelected = true;
 
+
+                selectedItemModel(selectedItem);
+
                 foreach (Transform child in numbersHolder.transform)
 
                 {
@@ -114,6 +119,15 @@ public class EquipmentSystem : SingletonMonobehaviour<EquipmentSystem>
 
         }
 
+
+    }
+
+    private void selectedItemModel(GameObject item)
+    {
+        string selectedItemName = selectedItem.name.Replace("_Inv(Clone)","");
+        GameObject itemModel = Instantiate(Resources.Load<GameObject>(selectedItemName + "_Model")
+            , new Vector3(0.4f, 0.2f,- 1.2f),Quaternion.Euler(0,-2,0));
+        itemModel.transform.SetParent(toolHolder,false);
 
     }
 

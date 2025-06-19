@@ -4895,6 +4895,8 @@ MonoBehaviour:
   handImage: {fileID: 242271234}
   axeImage: {fileID: 143207749}
   whiteCirticle: {fileID: 484474282}
+  isPlayerNear: 0
+  ChoppablrTree: {fileID: 0}
 --- !u!4 &687666451
 Transform:
   m_ObjectHideFlags: 0
@@ -7951,6 +7953,7 @@ GameObject:
   - component: {fileID: 1182647141}
   - component: {fileID: 1182647140}
   - component: {fileID: 1182647144}
+  - component: {fileID: 1182647145}
   m_Layer: 0
   m_Name: tree (5)
   m_TagString: Choppable
@@ -8043,8 +8046,8 @@ Transform:
   m_GameObject: {fileID: 1182647139}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 10.049999, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 10.049999, y: 1.6399999, z: 0}
+  m_LocalScale: {x: 1, y: 2.68, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 152806412}
@@ -8062,6 +8065,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ItemName: Tree
+--- !u!114 &1182647145
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1182647139}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7258c9b6eff91684f9ff981e0d61a7a6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  treeMaxHealth: 3
+  treeHealth: 0
+  choppedTree: {fileID: 8220945583694924364, guid: 35d9635a246faf84192d68263376e652, type: 3}
 --- !u!1 &1188952661
 GameObject:
   m_ObjectHideFlags: 0
@@ -8720,6 +8738,37 @@ RectTransform:
   m_AnchoredPosition: {x: -52.85327, y: 490}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!1 &1247145171
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1247145172}
+  m_Layer: 0
+  m_Name: ToolHolder
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1247145172
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1247145171}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.18, y: 0.1, z: 2.49}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1767689935}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1257182037
 GameObject:
   m_ObjectHideFlags: 0
@@ -8855,6 +8904,7 @@ GameObject:
   - component: {fileID: 1260101355}
   - component: {fileID: 1260101354}
   - component: {fileID: 1260101358}
+  - component: {fileID: 1260101359}
   m_Layer: 0
   m_Name: tree (3)
   m_TagString: Choppable
@@ -8947,8 +8997,8 @@ Transform:
   m_GameObject: {fileID: 1260101353}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 5.2599998, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 5.2599998, y: 1.6399999, z: 0}
+  m_LocalScale: {x: 1, y: 2.68, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 152806412}
@@ -8966,6 +9016,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ItemName: Tree
+--- !u!114 &1260101359
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1260101353}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7258c9b6eff91684f9ff981e0d61a7a6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  treeMaxHealth: 3
+  treeHealth: 0
+  choppedTree: {fileID: 8220945583694924364, guid: 35d9635a246faf84192d68263376e652, type: 3}
 --- !u!1 &1267223537
 GameObject:
   m_ObjectHideFlags: 0
@@ -9629,6 +9694,7 @@ GameObject:
   - component: {fileID: 1329364990}
   - component: {fileID: 1329364989}
   - component: {fileID: 1329364993}
+  - component: {fileID: 1329364994}
   m_Layer: 0
   m_Name: tree (4)
   m_TagString: Choppable
@@ -9721,8 +9787,8 @@ Transform:
   m_GameObject: {fileID: 1329364988}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 7.7099996, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 7.7099996, y: 1.6399999, z: 0}
+  m_LocalScale: {x: 1, y: 2.68, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 152806412}
@@ -9740,6 +9806,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ItemName: Tree
+--- !u!114 &1329364994
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1329364988}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7258c9b6eff91684f9ff981e0d61a7a6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  treeMaxHealth: 3
+  treeHealth: 0
+  choppedTree: {fileID: 8220945583694924364, guid: 35d9635a246faf84192d68263376e652, type: 3}
 --- !u!1 &1337642475
 GameObject:
   m_ObjectHideFlags: 0
@@ -9753,6 +9834,7 @@ GameObject:
   - component: {fileID: 1337642477}
   - component: {fileID: 1337642476}
   - component: {fileID: 1337642480}
+  - component: {fileID: 1337642481}
   m_Layer: 0
   m_Name: tree (6)
   m_TagString: Choppable
@@ -9845,8 +9927,8 @@ Transform:
   m_GameObject: {fileID: 1337642475}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 10.049999, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 10.049999, y: 1.6399999, z: 0}
+  m_LocalScale: {x: 1, y: 2.68, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 152806412}
@@ -9864,6 +9946,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ItemName: Tree
+--- !u!114 &1337642481
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1337642475}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7258c9b6eff91684f9ff981e0d61a7a6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  treeMaxHealth: 3
+  treeHealth: 0
+  choppedTree: {fileID: 8220945583694924364, guid: 35d9635a246faf84192d68263376e652, type: 3}
 --- !u!1 &1389877236
 GameObject:
   m_ObjectHideFlags: 0
@@ -9877,6 +9974,7 @@ GameObject:
   - component: {fileID: 1389877238}
   - component: {fileID: 1389877237}
   - component: {fileID: 1389877241}
+  - component: {fileID: 1389877242}
   m_Layer: 0
   m_Name: tree (2)
   m_TagString: Choppable
@@ -9969,8 +10067,8 @@ Transform:
   m_GameObject: {fileID: 1389877236}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 2.6099997, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 2.6099997, y: 1.6399999, z: 0}
+  m_LocalScale: {x: 1, y: 2.68, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 152806412}
@@ -9988,6 +10086,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ItemName: Tree
+--- !u!114 &1389877242
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1389877236}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7258c9b6eff91684f9ff981e0d61a7a6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  treeMaxHealth: 3
+  treeHealth: 0
+  choppedTree: {fileID: 8220945583694924364, guid: 35d9635a246faf84192d68263376e652, type: 3}
 --- !u!1 &1400423882
 GameObject:
   m_ObjectHideFlags: 0
@@ -10089,6 +10202,7 @@ GameObject:
   - component: {fileID: 1458975528}
   - component: {fileID: 1458975527}
   - component: {fileID: 1458975531}
+  - component: {fileID: 1458975532}
   m_Layer: 0
   m_Name: tree
   m_TagString: Choppable
@@ -10181,8 +10295,8 @@ Transform:
   m_GameObject: {fileID: 1458975526}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -4.2799997}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 0, y: 1.64, z: -4.2799997}
+  m_LocalScale: {x: 1, y: 2.68, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 152806412}
@@ -10200,6 +10314,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ItemName: Tree
+--- !u!114 &1458975532
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1458975526}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7258c9b6eff91684f9ff981e0d61a7a6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  treeMaxHealth: 3
+  treeHealth: 0
+  choppedTree: {fileID: 8220945583694924364, guid: 35d9635a246faf84192d68263376e652, type: 3}
 --- !u!1 &1467680014
 GameObject:
   m_ObjectHideFlags: 0
@@ -11823,6 +11952,7 @@ Transform:
   - {fileID: 330585546}
   - {fileID: 1965479386}
   - {fileID: 1125054528}
+  - {fileID: 1247145172}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1772540336
@@ -14144,6 +14274,7 @@ GameObject:
   - component: {fileID: 2056871960}
   - component: {fileID: 2056871959}
   - component: {fileID: 2056871963}
+  - component: {fileID: 2056871964}
   m_Layer: 0
   m_Name: tree (1)
   m_TagString: Choppable
@@ -14236,8 +14367,8 @@ Transform:
   m_GameObject: {fileID: 2056871958}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 0, y: 1.6399999, z: 0}
+  m_LocalScale: {x: 1, y: 2.68, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 152806412}
@@ -14255,6 +14386,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ItemName: Tree
+--- !u!114 &2056871964
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2056871958}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7258c9b6eff91684f9ff981e0d61a7a6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  treeMaxHealth: 3
+  treeHealth: 0
+  choppedTree: {fileID: 8220945583694924364, guid: 35d9635a246faf84192d68263376e652, type: 3}
 --- !u!1 &2062359833
 GameObject:
   m_ObjectHideFlags: 0
@@ -14297,6 +14443,7 @@ MonoBehaviour:
   numbersHolder: {fileID: 376430792}
   selectedNumber: -1
   selectedItem: {fileID: 0}
+  toolHolder: {fileID: 1247145172}
 --- !u!4 &2062359835
 Transform:
   m_ObjectHideFlags: 0
@@ -14505,6 +14652,67 @@ MonoBehaviour:
   currentCalorie: 0
   maxCalorie: 0
   calorieCounterText: {fileID: 1960312668}
+--- !u!1001 &2999643719770061109
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 2268983052792555355, guid: 35d9635a246faf84192d68263376e652, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2268983052792555355, guid: 35d9635a246faf84192d68263376e652, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2268983052792555355, guid: 35d9635a246faf84192d68263376e652, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2268983052792555355, guid: 35d9635a246faf84192d68263376e652, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2268983052792555355, guid: 35d9635a246faf84192d68263376e652, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2268983052792555355, guid: 35d9635a246faf84192d68263376e652, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2268983052792555355, guid: 35d9635a246faf84192d68263376e652, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2268983052792555355, guid: 35d9635a246faf84192d68263376e652, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2268983052792555355, guid: 35d9635a246faf84192d68263376e652, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2268983052792555355, guid: 35d9635a246faf84192d68263376e652, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8220945583694924364, guid: 35d9635a246faf84192d68263376e652, type: 3}
+      propertyPath: m_Name
+      value: ChoppedTree
+      objectReference: {fileID: 0}
+    - target: {fileID: 8220945583694924364, guid: 35d9635a246faf84192d68263376e652, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 35d9635a246faf84192d68263376e652, type: 3}
 --- !u!1001 &7558334362406122823
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -14580,3 +14788,4 @@ SceneRoots:
   - {fileID: 1872402010}
   - {fileID: 152806412}
   - {fileID: 2062359835}
+  - {fileID: 2999643719770061109}
